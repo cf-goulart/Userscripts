@@ -21,13 +21,14 @@ function extractAutoResult(tourneyId) {
         const cells = row.querySelectorAll(".match-element");
         const [,playerName1 = null, playerGameId1 = null] = cells[1].innerHTML.match(PLAYER_REGEXP) || []
         const [,playerName2 = null, playerGameId2 = null] = cells[2].innerHTML.match(PLAYER_REGEXP) || []
+        const resultvalue = cells[3].querySelector("select").value || null
         result.push({
             tableNumber: parseInt(cells[0].innerHTML),
             playerName1,
             playerGameId1,
             playerName2,
             playerGameId2,
-            result: cells[3].querySelector("select").value || null,
+            result: (resultvalue && resultvalue != "selected") ? resultvalue : null,
             tournamentId: tourneyId,
             isAtStage: RESULTS.includes(cells[3].querySelector("select").value)
         });
@@ -37,9 +38,10 @@ function extractAutoResult(tourneyId) {
 
 function extractDone(tourneyId) {
     const result = [];
+    const RESULTS = ["1WIN", "2WIN", "DRAW", "LOSSALL"];
     document.querySelectorAll(".match-row").forEach((row) => {
         const cells = row.querySelectorAll(".match-element");
-        if(cells[3].children[0].value != ""){
+        if(RESULTS.includes(cells[3].querySelector("select").value)){
             result.push({
                 status: "done",
                 tournamentId: tourneyId,
