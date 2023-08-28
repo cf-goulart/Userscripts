@@ -1,16 +1,14 @@
 // ==UserScript==
-// @name         GEM PurpleFox Extract
+// @name         GEM PurpleFox Automator
 // @namespace    http://tampermonkey.net/
 // @version      1.0.4
-// @description  Extract information about the current GEM round, and format it for PurpleFox.
+// @description  Extract information about the current GEM round and automatically import it into PurpleFox.
 // @author       Andrew Goulart <andrew@goulart.tech>
 // @author       Dan Collins <dcollins@batwing.tech>
 // @author       Aurélie Violette
-// @website      https://github.com/dcollinsn/gem-tampermonkey
+// @website      https://github.com/cf-agoulart/userscripts
 // @match        https://gem.fabtcg.com/gem/*/run/*/report/
 // @icon         https://eor-us.purple-fox.fr/favicon.ico
-// @grant        GM_registerMenuCommand
-// @grant        GM_setClipboard
 // ==/UserScript==
 
 // Establish necessary variables needed for validating and managing state information.
