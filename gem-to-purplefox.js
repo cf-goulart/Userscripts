@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         GEM PurpleFox Automator
+// @name         PurpleFox - GEM Bridge
 // @namespace    http://tampermonkey.net/
 // @version      1.0.4
 // @description  Extract information about the current GEM round and automatically import it into PurpleFox.
